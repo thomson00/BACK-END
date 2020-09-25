@@ -1,0 +1,6 @@
+{
+    "js":[
+        "https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js"
+    ],
+    "css":[]
+}
