@@ -22,3 +22,11 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 正确码表
+
+### 错误码表
+code | zh | en
+--- | --- | ---
+
+10001 | 请求参数无效 | The given data was invalid
