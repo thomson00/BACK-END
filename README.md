@@ -24,6 +24,8 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 正确码表
+code | zh | en
+--- | --- | ---
 
 ### 错误码表
 code | zh | en

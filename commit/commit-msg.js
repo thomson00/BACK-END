@@ -9,7 +9,7 @@ if (/^Merge branch/.test(msg)) {
 }
 if (!commitRE.test(msg)) {
     console.error(
-        `    ${chalk.bgRed.white(' ERROR ')} ${chalk.red(`不规范的git commit格式`)}\n\n` +
+        `    ${chalk.bgRed.white('ERROR ')} ${chalk.red(`不规范的git commit格式`)}\n\n` +
             `    ${chalk.green(`feat(LBCRM-123): add 'comments' option`)}\n\n` +
             `    ${chalk.green(`fix(QA-123): handle events on blur`)}\n\n` +
             `    ${chalk.green(`fix(internal): handle events on blur`)}\n\n` +
