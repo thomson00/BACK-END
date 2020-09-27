@@ -3,8 +3,13 @@
 </template>
 
 <script>
+import { getLanguageList } from '@/api/request';
 export default {
     name: 'Home',
-    components: {}
+    components: {},
+    async created() {
+        let res = await getLanguageList();
+        console.log(res);
+    }
 };
 </script>

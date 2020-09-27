@@ -8,25 +8,25 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        locale: window.localStorage.getItem('locale') || 'zh'
+        locale: window.localStorage.getItem('locale') || 'zh',
+        languageList: []
     },
     mutations: {
         setLanguage: (state, params) => {
-            state.locale = params;
+            state.languageList = params;
         }
     },
     getters: {
         getLanguage: state => {
-            return state.locale;
+            return state.languageList;
         }
     },
     actions: {
-        // axios请求数据存储在vuex中
         getLanguageAction(context) {
             getLanguageList()
                 .then(res => {
                     if (res) {
-                        context.commit('setLanguages', res);
+                        context.commit('setLanguage', res);
                     }
                 })
                 .catch(error => {
