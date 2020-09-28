@@ -20,3 +20,4 @@
 
 ### 自定义指令
 * 在directives文件夹中
+* v-input-limit需要配合v-model一起使用

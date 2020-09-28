@@ -4,11 +4,15 @@ import router from './router';
 import store from './store';
 import i18n from './i18n/index.js';
 import _ from './utils/lodash.js';
-import { Select, Option } from 'element-ui';
+import './plugins/day.js';
+import './directives/inputLimit.js';
+import { Select, Option, Input } from 'element-ui';
 
 Vue.config.productionTip = false;
 window._ = _;
-Vue.use(Select).use(Option);
+Vue.use(Select)
+    .use(Option)
+    .use(Input);
 
 new Vue({
     router,
