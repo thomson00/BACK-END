@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="button" value="按钮" @click="change" />
+        <input type="button" value="按钮" @click="login" />
     </div>
 </template>
 <script>
@@ -8,7 +8,8 @@ export default {
     data() {
         return {
             food: {
-                name: '冰激凌'
+                name: '冰激凌',
+                time: ''
             }
         };
     },
@@ -31,7 +32,14 @@ export default {
     methods: {
         change() {
             this.food.name = '棒棒糖';
+        },
+
+        login() {
+            this.$emit('toLogin', this.time);
         }
+    },
+    created() {
+        this.time = new Date().getTime();
     }
 };
 </script>

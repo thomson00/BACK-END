@@ -6,13 +6,10 @@ import i18n from './i18n/index.js';
 import _ from './utils/lodash.js';
 import './plugins/day.js';
 import './directives/inputLimit.js';
-import { Select, Option, Input } from 'element-ui';
+import './utils/element.js';
 
 Vue.config.productionTip = false;
 window._ = _;
-Vue.use(Select)
-    .use(Option)
-    .use(Input);
 
 new Vue({
     router,
