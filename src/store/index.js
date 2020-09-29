@@ -13,7 +13,15 @@ export default new Vuex.Store({
     },
     mutations: {
         setLanguage: (state, params) => {
-            state.languageList = params;
+            state.languageList = params.map(item => {
+                return {
+                    label: item.display_name,
+                    value: item.language_id
+                };
+            });
+        },
+        changeLanguage: (state, params) => {
+            state.locale = params;
         }
     },
     getters: {
@@ -23,15 +31,14 @@ export default new Vuex.Store({
     },
     actions: {
         getLanguageAction(context) {
-            getLanguageList()
-                .then(res => {
+            return new Promise(resolve => {
+                getLanguageList().then(res => {
                     if (res) {
                         context.commit('setLanguage', res);
+                        resolve(res);
                     }
-                })
-                .catch(error => {
-                    console.error(error);
                 });
+            });
         }
     },
     modules: {

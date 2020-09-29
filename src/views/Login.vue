@@ -23,6 +23,7 @@ export default {
         getLogin(val) {
             console.log(val);
         }
-    }
+    },
+    created() {}
 };
 </script>
