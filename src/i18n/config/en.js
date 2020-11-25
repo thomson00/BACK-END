@@ -1,5 +1,4 @@
 const en = {
-    login: 'LOGIN',
-    select: 'select'
+    login: 'LOGIN'
 };
 export default en;
