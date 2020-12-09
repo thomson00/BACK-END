@@ -1,0 +1,23 @@
+{
+  "id": "2233921",
+  "name": "back-end",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4765896",
+      "name": "eye",
+      "font_class": "eye",
+      "unicode": "e78f",
+      "unicode_decimal": 59279
+    },
+    {
+      "icon_id": "8092167",
+      "name": "eye-close",
+      "font_class": "eye-close",
+      "unicode": "e8ff",
+      "unicode_decimal": 59647
+    }
+  ]
+}

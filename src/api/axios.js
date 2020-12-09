@@ -35,12 +35,10 @@ export const reqJsonData = async ({ url, params = {}, method = 'post', mock = fa
                 .then(res => {
                     resolve(res.data || {});
                 })
-                .catch(err => {
-                    console.log(err);
+                .catch(() => {
                     resolve();
                 });
         } catch (err) {
-            console.log(err);
             resolve();
         }
     });

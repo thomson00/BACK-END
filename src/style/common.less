@@ -1,0 +1,46 @@
+body {
+    margin:0;
+    padding:0;
+}
+.button {
+    height: 30px;
+    min-width: 80px;
+    line-height: 30px;
+    font-weight: normal;
+    display: inline-block;
+    overflow: hidden;
+    width: fit-content;
+    padding: 0 15px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: @white;
+    border: none;
+    border-radius: 5px;
+    appearance: none;
+    box-sizing: border-box;
+    &.dark {
+        background: @dark-button-color;
+        &:hover {
+            background: @dark-button-hover-color;
+        }
+        &:focus {
+            background: @dark-button-focus-color;
+        }
+    }
+    &.green {
+        background-color: @green-button-color;
+        &:hover {
+            background: @green-button-hover-color;
+        }
+        &:focus {
+            background: @green-button-focus-color;
+        }
+    }
+}

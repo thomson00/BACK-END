@@ -7,6 +7,7 @@ import _ from './utils/lodash.js';
 import './plugins/day.js';
 import './directives/inputLimit.js';
 import './utils/element.js';
+import './style/common.less';
 
 Vue.config.productionTip = false;
 window._ = _;

@@ -42,6 +42,7 @@ import {
     TimelineItem,
     Drawer
 } from 'element-ui';
+import '../style/element-variable.scss';
 
 Vue.use(Input)
     .use(Radio)
