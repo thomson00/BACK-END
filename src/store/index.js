@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import moduleOne from './moduleOne/index.js';
-import moduleTwo from './moduleTwo/index.js';
+import moduleOne from './moduleOne/one_index.js';
+import moduleTwo from './moduleTwo/two_index.js';
 import { getCompanyInfo, getLanguageList } from '../api/request.js';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+    modules: {
+        moduleOne,
+        moduleTwo
+    },
     state: sessionStorage.getItem('state') ? JSON.parse(sessionStorage.getItem('state')) : { token: '', loginUser: '', locale: 'en', companyInfo: {}, languageList: [] },
     mutations: {
         setToken: (state, params) => {
@@ -59,9 +63,5 @@ export default new Vuex.Store({
                 });
             });
         }
-    },
-    modules: {
-        moduleOne,
-        moduleTwo
     }
 });
