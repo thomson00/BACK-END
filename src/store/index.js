@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import moduleOne from './moduleOne/one_index.js';
 import moduleTwo from './moduleTwo/two_index.js';
+import { getCookie } from '@/utils/cookie';
 import { getCompanyInfo, getLanguageList } from '../api/request.js';
 
 Vue.use(Vuex);
@@ -11,7 +12,17 @@ export default new Vuex.Store({
         moduleOne,
         moduleTwo
     },
-    state: sessionStorage.getItem('state') ? JSON.parse(sessionStorage.getItem('state')) : { token: '', loginUser: '', locale: 'en', companyInfo: {}, languageList: [] },
+    state: sessionStorage.getItem('state')
+        ? JSON.parse(sessionStorage.getItem('state'))
+        : {
+              token: getCookie('admin_token'),
+              loginUser: '',
+              locale: 'en',
+              companyInfo: {},
+              languageList: [],
+              permissionList: [],
+              role: ''
+          },
     mutations: {
         setToken: (state, params) => {
             state.token = params;
@@ -35,6 +46,10 @@ export default new Vuex.Store({
         },
         changeLanguage: (state, params) => {
             state.locale = params;
+        },
+        setPermission: (state, params) => {
+            state.permissionList = params.permissionList;
+            state.role = params.role;
         }
     },
     getters: {

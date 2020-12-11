@@ -45,7 +45,7 @@ export const reqJsonData = async ({ url, params = {}, method = 'post', mock = fa
 };
 
 axios.interceptors.request.use(config => {
-    const token = store.state.admin_token;
+    const token = store.state.token;
     if (token) {
         let getToken = `Bearer ${token}`;
         config.headers.common['Authorization'] = getToken;

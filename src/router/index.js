@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { getCookie } from '../utils/cookie';
+import store from '../store/index';
+import { getUserPermission } from '../api/request';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import NotFound from '../views/NotFound.vue';
@@ -31,11 +33,19 @@ const router = new VueRouter({
     routes
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
     let token = getCookie('admin_token');
     if (to.path !== '/login' && !token) {
         next({ path: '/login' });
     } else {
+        const res = await getUserPermission();
+        if (res) {
+            let { role } = res;
+            const permissionList = res.permissions.map(item => {
+                return item.name;
+            });
+            store.commit('setPermission', { permissionList, role });
+        }
         next();
     }
 });

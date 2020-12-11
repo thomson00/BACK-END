@@ -6,6 +6,7 @@ import i18n from './i18n/index.js';
 import _ from './utils/lodash.js';
 import './plugins/day.js';
 import './directives/inputLimit.js';
+import './directives/inputFocus.js';
 import './utils/element.js';
 import './style/common.less';
 
