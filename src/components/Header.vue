@@ -4,7 +4,7 @@
             <img :src="companyInfo.logo" alt="" />
         </div>
         <div class="header-menu">
-            <router-link class="header-menu-item" to="login" v-for="item in menuList" :key="item.key">
+            <router-link class="header-menu-item" :to="item.key" v-for="item in menuList" :key="item.key">
                 <div class="header-menu-text" v-html="$t(item.text)"></div>
             </router-link>
         </div>
@@ -37,6 +37,7 @@ export default {
 .header {
     height: 70px;
     display: flex;
+    box-shadow: 0 -15px 15px -10px @box-shardow-color inset;
     &-logo {
         height: 70px;
         width: 210px;
@@ -68,15 +69,23 @@ export default {
             &:hover {
                 background-color: @box-background-color;
                 color: @white;
+                .header-menu-text {
+                    border-right: 1px solid @box-background-color;
+                }
+            }
+            &.router-link-active {
+                background-color: @box-background-color;
+            }
+        }
+        &-item:last-of-type {
+            .header-menu-text {
+                border-right: none;
             }
         }
         &-text {
             padding: 0 10px;
             box-sizing: border-box;
             border-right: 1px solid @border-line-color;
-            &:hover {
-                border-right: 1px solid @box-background-color;
-            }
         }
     }
 }
