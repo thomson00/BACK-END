@@ -4,7 +4,7 @@
             <img :src="companyInfo.logo" alt="" />
         </div>
         <div class="header-menu">
-            <router-link class="header-menu-item" :to="item.key" v-for="item in menuList" :key="item.key">
+            <router-link class="header-menu-item" :class="activeMenu === item.key ? 'header-menu-active' : ''" :to="item.key" v-for="item in menuList" :key="item.key" @click.native="selectMenu(item.key)">
                 <div class="header-menu-text" v-html="$t(item.text)"></div>
             </router-link>
         </div>
@@ -19,7 +19,8 @@ export default {
     name: 'Header',
     data() {
         return {
-            menuList: []
+            menuList: [],
+            activeMenu: ''
         };
     },
     computed: {
@@ -27,7 +28,11 @@ export default {
             companyInfo: 'companyInfo'
         })
     },
-    methods: {},
+    methods: {
+        selectMenu(value) {
+            this.activeMenu = value;
+        }
+    },
     created() {
         this.menuList = getHeaderMenu();
     }
@@ -76,6 +81,9 @@ export default {
             &.router-link-active {
                 background-color: @box-background-color;
             }
+        }
+        &-active {
+            color: @white;
         }
         &-item:last-of-type {
             .header-menu-text {

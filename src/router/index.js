@@ -9,11 +9,58 @@ import NotFound from '../views/NotFound.vue';
 
 Vue.use(VueRouter);
 
+const secondRoute = [
+    {
+        path: '/'
+    },
+    {
+        path: 'MemberManagement',
+        name: 'MemberManagement',
+        component: () => import('../views/MemberManagement/index.vue')
+    },
+    {
+        path: 'FundingManagement',
+        name: 'FundingManagement',
+        component: () => import('../views/FundingManagement/index.vue')
+    },
+    {
+        path: 'RebateReportManagement',
+        name: 'RebateReportManagement',
+        component: () => import('../views/RebateReportManagement/index.vue')
+    },
+    {
+        path: 'OrdersReportManagement',
+        name: 'OrdersReportManagement',
+        component: () => import('../views/OrdersReportManagement/index.vue')
+    },
+    {
+        path: 'PromotionManagement',
+        name: 'PromotionManagement',
+        component: () => import('../views/PromotionManagement/index.vue')
+    },
+    {
+        path: 'MarketingManagement',
+        name: 'MarketingManagement',
+        component: () => import('../views/MarketingManagement/index.vue')
+    },
+    {
+        path: 'CRMSettings',
+        name: 'CRMSettings',
+        component: () => import('../views/CRMSettings/index.vue')
+    },
+    {
+        path: 'UserManagement',
+        name: 'UserManagement',
+        component: () => import('../views/UserManagement/index.vue')
+    }
+];
+
 const routes = [
     {
         path: '/',
         name: 'Home',
-        component: Home
+        component: Home,
+        children: secondRoute
     },
     {
         path: '/login',

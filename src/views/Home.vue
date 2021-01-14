@@ -1,6 +1,7 @@
 <template>
     <div class="home">
         <Header></Header>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -18,3 +19,8 @@ export default {
     async created() {}
 };
 </script>
+<style scoped lang="less">
+.home {
+    height: 100%;
+}
+</style>

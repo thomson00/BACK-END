@@ -38,5 +38,6 @@ export default {
 <style lang="less">
 #app {
     font-size: 14px;
+    height: 100%;
 }
 </style>
