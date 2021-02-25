@@ -9,9 +9,15 @@ import './directives/inputLimit.js';
 import './directives/inputFocus.js';
 import './utils/element.js';
 import './style/common.less';
+import { setGlobal } from './utils/index.js';
+import { filterDemo } from './filters/index.js';
+import Loading from './components/loading.vue';
 
 Vue.config.productionTip = false;
 window._ = _;
+Vue.prototype.setGlobal = setGlobal;
+Vue.component('Loading', Loading);
+Vue.filter('filterDemo', filterDemo);
 
 new Vue({
     router,
